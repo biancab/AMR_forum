@@ -79,3 +79,71 @@ We currently don't normalize synonyms such as <i>meth</i>, <i>LSD</i> to a canon
 
 We do correct typos and expand true abbreviations such as <i>Dr.</i> -> <i>doctor</i> and <i>sen.</i> -> <i>senator</i>, but we keep acronyms such as <i>CEO</i> and <i>LSD</i> and we keep clipped forms such as <i>gym</i>, <i>phone</i>, <i>exam</i>, instead of expanding to <i>gymnasium</i>, <i>telephone</i>, <i>examination</i>
 
+
+•  Use of <code>have-06</code>
+
+For expressions like:
+
+
+> • have an accident
+>
+> • have a hotdog/food/tea
+>
+> • have consequences
+>
+> • have a trip 
+
+In situation where you can go to a predicate, <i>have</i> should be dropped, e.g.:
+
+<i>have shower</i> --> <code>shower-01</code>
+
+<i>have a vacation</i> --> <code>vacation-01</code>
+
+If there is a good replacement verb, please use it, e.g.: 
+
+<i>have a hotdog</i> --> <code>eat-01</code> <i>hotdog</i>
+
+<i>have tea</i> --> <code>drink-01</code> <i>tea</i>
+
+<i>have a cigaratte</i> --> <code>smoke-02</code> <i>cigarette</i>; 
+
+
+If it's not too much of a stretch to use <code>have-03</code>, use it. Example: <code>have-03</code> <i>time</i>
+
+For other true support verbs such as <i>to have an accident</i>, we will use <code>have-06</code> for the time being.
+
+
+•  Annotation of fractions
+
+Fractions should be annotated as "x/y", rendered as text. 
+
+```lisp
+(e / equal-01
+      :ARG1 (d / diameter
+            :poss (p / planet :name (n / name :op1 "Jupiter")))
+      :ARG2 (a / about
+            :op1 (p2 / product-of :op1 "1/10"
+                  :op2 (d2 / diameter
+                        :poss (s / sun)))))
+```
+
+<i>The diameter of Jupiter is about 1/10 the sun's diameter.</i>
+
+
+Typed variants of fractions should also be mapped to the numerical form.
+
+<i>one third</i> --> <i>1/3</i>
+
+<i>a fifth</i> --> <i>1/5</i>
+
+
+•  Annotation of emphasis
+
+Emphasis, as used in the sentence <i>I do like to eat icecream.</i> should be ignored for now.
+
+
+
+
+
+
+
