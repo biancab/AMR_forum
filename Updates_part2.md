@@ -291,9 +291,13 @@ b / behind
 •  Annotation of named entity "Kashmir"
 
 When explicitly referred to as a "territory", you should use the NE type <i>territory</i>.
-When it refers to the Indian part of Kashmir only, then you should use <i>state</i> (the primary subdivision of India)
-When it refers to the Pakistani part of Kashmir only, you should use <i>province</i> (the primary subdivision of Pakistan)
+
+When it refers to the Indian part of Kashmir only, then you should use <i>state</i> (the primary subdivision of India).
+
+When it refers to the Pakistani part of Kashmir only, you should use <i>province</i> (the primary subdivision of Pakistan).
+
 Otherwise (most of the time): <i>world-region</i>
+
 
 •  Choosing the correct NE type
 
