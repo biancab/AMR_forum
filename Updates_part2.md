@@ -287,3 +287,26 @@ b / behind
 	:op1 (a / attack-01
 	:domain (h / he
 ```
+
+•  Annotation of named entity "Kashmir"
+
+When explicitly referred to as a "territory", you should use the NE type <i>territory<\i>.
+When it refers to the Indian part of Kashmir only, then you should use <i>state<\i> (the primary subdivision of India)
+When it refers to the Pakistani part of Kashmir only, you should use <i>province<\i> (the primary subdivision of Pakistan)
+Otherwise (most of the time): <i>world-region<\i>
+
+•  Choosing the correct NE type
+
+For named entities, the rule is to select a type from the NE type list, such as "organization", "criminal-organization", etc. So, we don't use "agency", "group" etc. for concepts like "International Atomic Energy Agency", "International Crisis Group" etc. 
+
+Two exceptions:
+
+1) If a named entity includes a title, like "Queen Elizabeth", then we use the title as the type: (p / queen :name...). Titles "Mr." and "Mrs." are just treated as part of the name, however.
+
+2) If a named entity is involved in an appositive ("Elsevier, the Dutch group"), then the type is taken from the appositive: (g / group :name...).
+
+For phrases that are NOT named entities, such as "parking space" (s / space...) or "local district" (d / district...), we never use the NE type list.
+
+
+
+
