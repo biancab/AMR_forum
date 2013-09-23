@@ -273,3 +273,17 @@ If you have phrases like “<b>southern Philippines</b>”, in which case the ph
 •  Choosing <code>:age</code> over <code>:duration</code>
 
 Whenever you have an “N-year-old”/”N years old” construction, you should also use <code>:age</code> (or its reification), instead of <code>:duration</code> (even for building, laws etc.)
+
+•  Annotation of ambiguous agent types
+
+If it's not clear who or what is the agent of action (e.g. a person or company), you should rely on the context and as a last resort use “thing”.
+
+•  Annotation of "be behind" (some action)
+
+If you have a structure like "he is behind the attacks", you should use the following annotation:
+
+```lisp
+b / behind
+	:op1 (a / attack-01
+	:domain (h / he
+```
