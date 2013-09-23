@@ -142,6 +142,55 @@ Typed variants of fractions should also be mapped to the numerical form.
 Emphasis, as used in the sentence <i>I do like to eat icecream.</i> should be ignored for now.
 
 
+•  Annotation of politeness
+
+You should use <code>:polite +</code> to annotate "textual decorations" such as <i>please</i> and <i>would you kindly</i> that make a sentence more polite.
+
+We don't use <code>:polite +</code> when something is inheritently polite (such as <i>You are a wonderful cook.</i>) or more indirectly polite (such as <i>It was not the most accessible textbook I have read.</i>).
+
+However, <code>:polite +</code> is not limited to (semantic) imperatives such as <i>Could you please close the door?</i>
+It can also occur with (semantic) questions. For example, <i>Could you tell me what time it is?</i> would be annotated as <i>What time is it?</i> with an additional <code>:polite +</code>
+
+```lisp
+(c / close-01 :mode imperative :polite +
+      :ARG0 (y / you)
+      :ARG1 (d / door))
+```
+
+<i>Please close the door.</i>
+
+
+•  Annotation of completely censored words
+
+If the sentence contains a completely censored word, you should annotate it using <code>thing</code>.
+
+```lisp
+(t / throw-01
+      :ARG0 (l / life)
+      :ARG1 (t3 / thing)
+      :ARG2 (y / you)
+      :time (t2 / time
+            :quant (a / all)))
+```
+
+<i>Life throws **** at you all the time.</i>
+
+
+•  Annotation of <i>commander</i>
+
+<i>commander</i> can have several meanings, even when used with <code>have-org-role-91</code>:
+
+(1) <b>specific military rank</b>, e.g. in U.S. Navy (corresponding to Lieutenant Colonel in Army)
+
+(2) <b>somewhat generic term for high-ranking officers</b>, e.g. <i>Medvedev asked military commanders to come up with a plan.</i>
+
+
+In these cases, <i>commander</i> shouldn't be decomposed.
+
+(3) <b>person that commands an entity</b> e.g. <i>company commander, Ivanov, commander of Russian Military Space Force</i>
+
+In this case, <i>commander</i> should be decomposed into <i>person</i>, :ARG0-of <code>command-02</code>
+
 
 
 
