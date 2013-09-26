@@ -192,6 +192,13 @@ In these cases, <i>commander</i> shouldn't be decomposed.
 In this case, <i>commander</i> should be decomposed into <i>person</i>, :ARG0-of <code>command-02</code>
 
 
+•  Annotation of frequency and other types of rates
+
+There is a new frame available, called <code>rate-entity-91</code>, which is used to express frequencies and other rate entities, like <i>We meet several times a month</i>, <i>We talk every day</i>, <i>20 students per teacher</i> etc.
+
+Please check out the frame and examples in the link below:
+
+http://www.isi.edu/~ulf/amr/lib/popup/rate-entity.html
 
 
 
