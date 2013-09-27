@@ -201,5 +201,23 @@ Please check out the frame and examples in the link below:
 http://www.isi.edu/~ulf/amr/lib/popup/rate-entity.html
 
 
+•  Annotation of wishes/greetings
 
+If you have structures like <i>May God 's peace , mercy , and blessings be upon you</i>, <i>May Allah grant him patience</i>, may should be annotated using <code>wish-01</code>.
+
+```lisp
+(w / wish-01
+      :ARG1 (r / rest-01
+            :ARG1 (h / he)
+            :manner (p / peace)))
+```            
+
+<i>May he rest in peace.</i>
+
+The same approach should be used even in cases where <i>may</i> is not explicitly stated.
+
+<i>Peace be upon you!</i>
+
+
+For the part "be upon you"/"be upon him" etc., we suggest that you use the reification of <code>:beneficiary</code>, i.e. <code>benefit-01</code> or <code>receive-01</code>.
 
