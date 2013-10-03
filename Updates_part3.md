@@ -221,3 +221,55 @@ The same approach should be used even in cases where <i>may</i> is not explicitl
 
 For the part "be upon you"/"be upon him" etc., we suggest that you use the reification of <code>:beneficiary</code>, i.e. <code>benefit-01</code> or <code>receive-01</code>.
 
+
+•  Annotation of <code>:time</code> <i>before</i> or <i>after</i> 
+
+The purpose of the annotation method presented below is to provide consistency across all time structures built around a fixed point in time like <i>20 minutes ago</i>, <i>in 10 years</i>, <i>in the 2 months after ... </i>.
+
+<i>after</i> should be used to express the time of an event which succeeds another (whether in the past or future):
+
+```lisp
+(l / leave-01
+  :ARG0 (i / i)
+  :time (a / after
+          :op1 (n / now)
+          :quant (t / temporal-quantity :quant 20
+                   :unit (m / minute))))
+```
+
+<i>I will leave in 20 minutes.</i>
+
+The <code>:quant</code> role indicates how much time has elapsed between the 2 moments.
+
+```lisp
+(i / interview-01
+  :ARG0 (p / police)
+  :ARG1 (p2 / person
+           :ARG0-of (w / witness-01)
+           :quant (m3 / more-than :op1 100))
+  :time (a / after
+          :op1 (m / murder-01)
+          :duration (t / temporal-quantity :quant 2
+                      :unit (m2 / month))))
+```
+
+<i>The police interviewed more than 100 witnesses in the 2 months after the murder.</i>
+
+<code>:duration</code> indicates that the second action took place (several times) in a given time span after the first event.
+
+<i>before</i> should be used to indicate that an event took place before another moment in time. <i>before</i> should replace <i>ago</i> in all structures of this kind:
+
+```lisp
+(r / retire-01
+      :ARG0 (h / he)
+      :time (b / before
+            :op1 (n / now)
+            :quant (m / multiple
+                  :op1 (t / temporal-quantity :quant 1
+                        :unit (y / year)))))
+```
+
+<i>He retired years ago .</i>
+
+For more details and examples, please check the help page: http://www.isi.edu/~ulf/amr/lib/popup/time-before-after.html
+
